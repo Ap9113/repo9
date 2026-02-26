@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Your Orders</title></head>
+<body>
+<h1>Your Orders</h1>
+<ul>
+    <li th:each="order : ${orders}">
+        <a th:href="@{'/orders/' + ${order.id}}">Order #<span th:text="${order.id}"></span> - Total: <span th:text="${order.total}"></span></a>
+    </li>
+</ul>
+<a th:href="@{/products}">Continue Shopping</a>
+</body>
+</html>
